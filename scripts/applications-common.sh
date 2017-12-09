@@ -3,36 +3,41 @@ echo "Installing applications"
 
 # Utilities
 
-brew cask install flux
-brew cask install flycut
-brew cask install shiftit
-brew cask install dash
-brew cask install postman
-brew cask install google-drive
-brew install the_silver_searcher
+brew cask install google-backup-and-sync
+brew cask install google-photos-backup-and-sync
 
 # Terminals
 
 brew cask install iterm2
+#oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Browsers
 
 brew cask install google-chrome
 brew cask install firefox
+brew cask install lastpass
 
 # Communication
 
+brew cask install flowdock
 brew cask install slack
-brew cask install screenhero
-brew cask install skype
 
 # Text Editors
 
-brew cask install macdown
+brew cask install atom
 brew cask install sublime-text
 brew cask install textmate
-brew install macvim
 
-# Emulation tools
+# IDEs
+brew cask install intellij-idea-ce
 
-brew cask install virtualbox
+#tunes
+brew cask install spotify
+
+#financial
+brew cask install ynab
+
+#game
+brew cask install openemu
+brew cask install steam

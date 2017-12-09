@@ -11,7 +11,7 @@ echo
 echo "Ensuring you have the latest Homebrew..."
 brew update
 
-echo 
+echo
 echo "Ensuring you have a healthy Homebrew environment..."
 brew doctor
 
@@ -37,3 +37,5 @@ brew cleanup
 echo
 echo "Adding Homebrew's sbin to your PATH..."
 echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.bash_profile
+
+brew install git
