@@ -4,13 +4,13 @@ echo "Installing applications"
 # Utilities
 
 brew cask install google-backup-and-sync
-brew cask install google-photos-backup-and-sync
+#brew cask install google-photos-backup-and-sync
 
 # Terminals
 
 brew cask install iterm2
 #oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Browsers
 
