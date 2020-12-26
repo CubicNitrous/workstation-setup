@@ -12,10 +12,6 @@ echo "Ensuring you have the latest Homebrew..."
 brew update
 
 echo
-echo "Ensuring you have a healthy Homebrew environment..."
-brew doctor
-
-echo
 echo "Ensuring your Homebrew directory is writable..."
 sudo chown -R $(whoami) /usr/local/bin
 
@@ -36,6 +32,6 @@ brew cleanup
 
 echo
 echo "Adding Homebrew's sbin to your PATH..."
-echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.bash_profile
+echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
 
 brew install git
