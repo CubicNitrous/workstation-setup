@@ -1,5 +1,5 @@
 echo
 echo "Installing NodeJS"
 
-brew install mvn
+brew install nvm
 

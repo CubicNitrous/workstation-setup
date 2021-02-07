@@ -21,8 +21,7 @@ echo "Setting up a '$SETUP_TYPE' machine..."
 source ${MY_DIR}/homebrew.sh
 source ${MY_DIR}/configuration-osx.sh
 source ${MY_DIR}/git.sh
-source ${MY_DIR}/git-aliases.sh
-source ${MY_DIR}/java.sh
 source ${MY_DIR}/node.sh
+source ${MY_DIR}/go.sh
 source ${MY_DIR}/applications-common.sh
 source ${MY_DIR}/finished.sh

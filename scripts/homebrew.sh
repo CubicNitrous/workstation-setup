@@ -24,6 +24,10 @@ echo "Adding Pivotal tap to Homebrew"
 brew tap pivotal/tap
 
 echo
+echo "Adding brew-cask-upgrade to Homebrew"
+brew tap buo/cask-upgrade
+
+echo
 echo "Upgrading existing brews..."
 brew upgrade
 
@@ -33,5 +37,3 @@ brew cleanup
 echo
 echo "Adding Homebrew's sbin to your PATH..."
 echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
-
-brew install git

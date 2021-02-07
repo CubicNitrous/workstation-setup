@@ -5,9 +5,12 @@ echo "Installing applications"
 
 brew cask install google-backup-and-sync
 
-# Terminals
+# Terminal
 
 brew cask install iterm2
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+brew install starship
 
 # Browsers
 
@@ -22,7 +25,12 @@ brew cask install flowdock
 # Text Editors
 
 brew cask install sublime-text
-brew cask install visual-studio-code
 
 #game
 brew cask install openemu
+
+brew cask install ccleaner
+
+brew cask install tiles
+
+brew install mas
