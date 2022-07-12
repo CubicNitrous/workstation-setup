@@ -3,7 +3,7 @@ echo "Installing applications"
 
 # Utilities
 
-brew cask install google-backup-and-sync
+brew cask install google-drive
 
 # Terminal
 
@@ -20,21 +20,8 @@ brew cask install google-chrome
 brew cask install firefox
 brew cask install lastpass
 
-# Communication
-
-brew cask install flowdock
-
-# Text Editors
-
 brew cask install sublime-text
-
-#game
-brew cask install openemu
-
 brew cask install ccleaner
-
 brew cask install tiles
-
 brew install mas
-
 brew install geekbench
