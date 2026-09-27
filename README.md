@@ -17,8 +17,9 @@ Run the setup with:
 `dotfiles/.config/mise/config.toml` selects the latest Go release. Node.js is
 managed by NVM; add an `.nvmrc` to each project and run `nvm use` there to select
 its version.
-The root `mise.toml` defines the `mise run setup` workflow. It installs packages
-and runtimes, links the selected files from `dotfiles/` into your home directory,
-and applies macOS preferences. Existing dotfiles are kept as timestamped backups
-before links are created. The shell entry point only bootstraps Homebrew and
-mise; macOS preferences still use Apple's `defaults` and system commands.
+The root `mise.toml` defines the `mise run setup` workflow and declarative macOS
+preferences. The setup applies them with `mise bootstrap macos defaults apply`;
+check for drift later with `mise bootstrap macos defaults status`. The remaining
+shell script handles the timezone, filesystem flags, and per-user screenshot
+directory. Existing dotfiles are kept as timestamped backups before links are
+created.

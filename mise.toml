@@ -1,9 +1,93 @@
 [tasks.setup]
 description = "Install packages, sync dotfiles, runtimes, and macOS preferences"
+interactive = true
 run = [
   "brew bundle --file Brewfile",
   "bash scripts/dotfiles.sh",
   "mise install",
+  "mise bootstrap macos defaults apply",
   "sudo -v",
   "bash scripts/configuration-osx.sh",
 ]
+
+[bootstrap.macos.dock]
+autohide = true
+
+[bootstrap.macos.finder]
+save_new_documents_to_cloud = false
+show_all_files = true
+show_pathbar = true
+show_status_bar = true
+sort_folders_first = true
+show_extensions_warning = false
+preferred_view_style = "list"
+
+[bootstrap.macos.keyboard]
+key_repeat = 1
+initial_key_repeat = 15
+
+[bootstrap.macos.defaults."com.apple.menuextra.clock"]
+DateFormat = "EEE MMM d  h:mm:ss a"
+
+[bootstrap.macos.defaults."NSGlobalDomain"]
+"com.apple.swipescrolldirection" = false
+AppleShowAllExtensions = true
+
+[bootstrap.macos.defaults."com.apple.finder"]
+"_FXShowPosixPathInTitle" = true
+FXDefaultSearchScope = "SCcf"
+ShowExternalHardDrivesOnDesktop = true
+ShowHardDrivesOnDesktop = true
+ShowRemovableMediaOnDesktop = true
+
+[bootstrap.macos.defaults."com.apple.print.PrintingPrefs"]
+"Quit When Finished" = true
+
+[bootstrap.macos.defaults."com.apple.desktopservices"]
+DSDontWriteNetworkStores = true
+DSDontWriteUSBStores = true
+
+[bootstrap.macos.defaults."com.apple.frameworks.diskimages"]
+skip-verify = true
+skip-verify-locked = true
+skip-verify-remote = true
+
+[bootstrap.macos.defaults."com.apple.NetworkBrowser"]
+BrowseAllInterfaces = true
+
+[bootstrap.macos.defaults."com.apple.Safari"]
+HomePage = "about:blank"
+ShowFavoritesBar = false
+ShowSidebarInTopSites = false
+ProxiesInBookmarksBar = "()"
+WarnAboutFraudulentWebsites = true
+SendDoNotTrackHTTPHeader = true
+
+[bootstrap.macos.defaults."com.apple.terminal"]
+StringEncodings = [4]
+
+[bootstrap.macos.defaults."com.apple.TimeMachine"]
+DoNotOfferNewDisksForBackup = true
+
+[bootstrap.macos.defaults."com.apple.ActivityMonitor"]
+OpenMainWindow = true
+IconType = 5
+ShowCategory = 0
+SortColumn = "CPUUsage"
+SortDirection = 0
+
+[bootstrap.macos.defaults."com.apple.SoftwareUpdate"]
+AutomaticCheckEnabled = true
+ScheduleFrequency = 1
+AutomaticDownload = 1
+CriticalUpdateInstall = 1
+
+[bootstrap.macos.defaults."com.apple.commerce"]
+AutoUpdate = true
+AutoUpdateRestartRequired = true
+
+[[bootstrap.macos.defaults_entries]]
+domain = "com.apple.ImageCapture"
+key = "disableHotPlug"
+host = "current"
+value = true
