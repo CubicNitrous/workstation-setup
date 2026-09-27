@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-sudo systemsetup -settimezone America/Chicago
 chflags nohidden ~/Library
 sudo chflags nohidden /Volumes
 

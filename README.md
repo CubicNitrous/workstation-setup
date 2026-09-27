@@ -19,7 +19,7 @@ managed by NVM; add an `.nvmrc` to each project and run `nvm use` there to selec
 its version.
 The root `mise.toml` defines the `mise run setup` workflow and declarative macOS
 preferences. The setup applies them with `mise bootstrap macos defaults apply`;
-check for drift later with `mise bootstrap macos defaults status`. The remaining
-shell script handles the timezone, filesystem flags, and per-user screenshot
-directory. Existing dotfiles are kept as timestamped backups before links are
-created.
+check for drift later with `mise bootstrap macos defaults status`. Choose your
+timezone in System Settings → General → Date & Time; the remaining shell script
+handles filesystem flags and the per-user screenshot directory. Existing
+dotfiles are kept as timestamped backups before links are created.
