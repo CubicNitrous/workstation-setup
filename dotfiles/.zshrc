@@ -13,6 +13,13 @@ alias cdp="cd ~/projects"
 # DEFAULT EDITOR
 export EDITOR="nano"
 
+export NVM_DIR="$HOME/.nvm"
+if command -v brew >/dev/null 2>&1 && brew list nvm >/dev/null 2>&1; then
+  NVM_BREW_PREFIX="$(brew --prefix nvm)"
+  [ -s "$NVM_BREW_PREFIX/nvm.sh" ] && \. "$NVM_BREW_PREFIX/nvm.sh"
+  [ -s "$NVM_BREW_PREFIX/etc/bash_completion.d/nvm" ] && \. "$NVM_BREW_PREFIX/etc/bash_completion.d/nvm"
+fi
+
 if command -v mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)"
 fi

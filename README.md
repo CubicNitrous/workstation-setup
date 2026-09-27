@@ -14,7 +14,9 @@ Run the setup with:
 ```
 
 `Brewfile` declares Homebrew formulae, applications, and VS Code extensions.
-`dotfiles/.config/mise/config.toml` selects Node.js LTS and the latest Go release.
+`dotfiles/.config/mise/config.toml` selects the latest Go release. Node.js is
+managed by NVM; add an `.nvmrc` to each project and run `nvm use` there to select
+its version.
 The root `mise.toml` defines the `mise run setup` workflow. It installs packages
 and runtimes, links the selected files from `dotfiles/` into your home directory,
 and applies macOS preferences. Existing dotfiles are kept as timestamped backups
