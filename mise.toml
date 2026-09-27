@@ -1,0 +1,9 @@
+[tasks.setup]
+description = "Install packages, sync dotfiles, runtimes, and macOS preferences"
+run = [
+  "brew bundle --file Brewfile",
+  "bash scripts/dotfiles.sh",
+  "mise install",
+  "sudo -v",
+  "bash scripts/configuration-osx.sh",
+]

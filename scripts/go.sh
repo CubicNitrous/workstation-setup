@@ -1,3 +1,0 @@
-# go
-
-brew install go
