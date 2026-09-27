@@ -1,0 +1,6 @@
+[misc]
+pre_sudo = true
+disable = ["node", "pnpm", "yarn", "pyenv", "pip3", "containers"]
+
+[brew]
+greedy_cask = true

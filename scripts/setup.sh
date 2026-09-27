@@ -1,27 +1,19 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-# Fail immediately if any errors occur
-set -e
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
-echo "Caching password..."
-sudo -K
-sudo true;
+if ! command -v brew >/dev/null 2>&1 && [ ! -x /opt/homebrew/bin/brew ] && [ ! -x /usr/local/bin/brew ]; then
+  echo "Installing Homebrew..."
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
-SETUP_TYPE=$1
-MY_DIR="$(dirname "$0")"
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
 
-clear
-
-echo
-echo "Setting up a '$SETUP_TYPE' machine..."
-
-#source ${MY_DIR}/xcode-license.sh
-
-# Note: Homebrew needs to be set up first
-source ${MY_DIR}/homebrew.sh
-source ${MY_DIR}/configuration-osx.sh
-source ${MY_DIR}/git.sh
-source ${MY_DIR}/node.sh
-source ${MY_DIR}/go.sh
-source ${MY_DIR}/applications-common.sh
-source ${MY_DIR}/finished.sh
+cd "${SCRIPT_DIR}/.."
+brew install mise
+mise run setup
